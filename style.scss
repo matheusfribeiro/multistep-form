@@ -18,25 +18,112 @@ body {
 }
 
 .container {
-  height: 500px;
+  height: 550px;
   width: 1000px;
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 20px 40px 20px 10px;
   border: 2px solid black;
   border-radius: 22px;
+  background-color: white;
   
 
-  .stepsDisplay {
-    border: solid 2px red;
-    border-radius: 22px;
+  .steps-display {
+    background-image: url('assets/images/bg-sidebar-desktop.svg');
+    border-radius: 10px;
     width: 250px;
-    padding: 20px;
+    padding: 40px 40px 40px 10px;
+
+    .steps {
+      display: flex;
+      color: white;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      
+      > span {
+        
+        border-radius: 50%;
+        color: white;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        padding: 2px;
+        border: solid 1px white;
+      }
+      
+    }
+
   }
 
-  .formDisplay {
+  .form-display {
+    display: flex;
+    flex-direction: column;
     border: solid 2px yellow;
     border-radius: 22px;
-    padding: 20px;
+    padding: 20px 40px;
+    color: hsl(213, 96%, 18%);
+
+    .form-header {
+      margin-bottom: 30px;
+
+      h1 {
+        font-family: sans-serif;
+        font-weight: 700;
+      }
+
+      span {
+        color: hsl(229, 24%, 87%);
+      }
+    }
+    
+
+    .input-control {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 5px;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        outline: none;
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid hsl(229, 24%, 87%);
+        
+      }
+
+      .error {
+        color: red;
+        display: none;
+      }
+
+      .input-error {
+        border: solid red 1px;
+      }
+    }
+
+    button {
+      margin-left: auto;
+      padding: 15px 25px;
+      margin-top: auto;
+      color: white;
+      background-color:  hsl(213, 94%, 13%);
+      outline: none;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: hsl(213, 96%, 18%);
+      }
+    }
+
+    
   }
 }

@@ -17,22 +17,90 @@ body {
 }
 
 .container {
-  height: 500px;
+  height: 550px;
   width: 1000px;
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 20px 40px 20px 10px;
   border: 2px solid black;
   border-radius: 22px;
+  background-color: white;
 }
-.container .stepsDisplay {
-  border: solid 2px red;
-  border-radius: 22px;
+.container .steps-display {
+  background-image: url("assets/images/bg-sidebar-desktop.svg");
+  border-radius: 10px;
   width: 250px;
-  padding: 20px;
+  padding: 40px 40px 40px 10px;
 }
-.container .formDisplay {
+.container .steps-display .steps {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+.container .steps-display .steps > span {
+  border-radius: 50%;
+  color: white;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  padding: 2px;
+  border: solid 1px white;
+}
+.container .form-display {
+  display: flex;
+  flex-direction: column;
   border: solid 2px yellow;
   border-radius: 22px;
-  padding: 20px;
+  padding: 20px 40px;
+  color: hsl(213deg, 96%, 18%);
+}
+.container .form-display .form-header {
+  margin-bottom: 30px;
+}
+.container .form-display .form-header h1 {
+  font-family: sans-serif;
+  font-weight: 700;
+}
+.container .form-display .form-header span {
+  color: hsl(229deg, 24%, 87%);
+}
+.container .form-display .input-control {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.container .form-display .input-control div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+.container .form-display .input-control input {
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid hsl(229deg, 24%, 87%);
+}
+.container .form-display .input-control .error {
+  color: red;
+  display: none;
+}
+.container .form-display .input-control .input-error {
+  border: solid red 1px;
+}
+.container .form-display button {
+  margin-left: auto;
+  padding: 15px 25px;
+  margin-top: auto;
+  color: white;
+  background-color: hsl(213deg, 94%, 13%);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+.container .form-display button:hover {
+  background-color: hsl(213deg, 96%, 18%);
 }/*# sourceMappingURL=style.css.map */
