@@ -22,7 +22,6 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 20px 40px 20px 10px;
-  border: 2px solid black;
   border-radius: 22px;
   background-color: white;
 }
@@ -37,24 +36,36 @@ body {
   color: white;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 40px;
+  padding: 15px 30px;
 }
 .container .steps-display .steps > span {
   border-radius: 50%;
   color: white;
   height: 30px;
-  width: 30px;
+  width: 40px;
   text-align: center;
   padding: 2px;
   border: solid 1px white;
 }
+.container .steps-display .steps div {
+  width: 100%;
+  margin-left: 15px;
+}
+.container .steps-display .steps div span {
+  font-size: small;
+}
+.container .steps-display .steps div h4 {
+  font-size: 14px;
+}
 .container .form-display {
   display: flex;
   flex-direction: column;
-  border: solid 2px yellow;
   border-radius: 22px;
   padding: 20px 40px;
   color: hsl(213deg, 96%, 18%);
+}
+.container .form-display.hidden {
+  display: none;
 }
 .container .form-display .form-header {
   margin-bottom: 30px;
@@ -83,6 +94,16 @@ body {
   border-radius: 8px;
   border: 2px solid hsl(229deg, 24%, 87%);
 }
+.container .form-display .input-control input::-moz-placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: inherit;
+}
+.container .form-display .input-control input::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: inherit;
+}
 .container .form-display .input-control .error {
   color: red;
   display: none;
@@ -90,10 +111,108 @@ body {
 .container .form-display .input-control .input-error {
   border: solid red 1px;
 }
-.container .form-display button {
-  margin-left: auto;
-  padding: 15px 25px;
+.container .form-display .box-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.container .form-display .box-control .box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px;
+  height: 170px;
+  width: 150px;
+  border: 2px solid hsl(229deg, 24%, 87%);
+  border-radius: 16px;
+  cursor: pointer;
+}
+.container .form-display .box-control .box div {
+  display: flex;
+  flex-direction: column;
+}
+.container .form-display .box-control .box div b {
+  color: hsl(213deg, 96%, 18%);
+}
+.container .form-display .box-control .box div span {
+  color: hsl(231deg, 11%, 63%);
+}
+.container .form-display .switcher {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border-radius: 16px;
+  background-color: hsl(229deg, 24%, 87%);
+}
+.container .form-display .add-on-control {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container .form-display .add-on-control .add-on {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  padding: 15px;
+  border: solid hsl(243deg, 100%, 62%) 1px;
+  border-radius: 16px;
+  align-items: center;
+  gap: 1rem;
+  background-color: hsl(204deg, 33%, 97%);
+}
+.container .form-display .add-on-control .add-on div {
+  margin-right: auto;
+}
+.container .form-display .add-on-control .add-on span {
+  color: hsl(243deg, 100%, 62%);
+}
+.container .form-display .add-on-control .add-on p {
+  font-size: smaller;
+  font-weight: bold;
+  color: hsl(231deg, 11%, 63%);
+}
+.container .form-display .review-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: hsl(204deg, 33%, 97%);
+  border-radius: 16px;
+}
+.container .form-display .review-box .plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.container .form-display .review-box .services {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.container .form-display .total {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-top: 10px;
+}
+.container .form-display .buttons {
+  display: flex;
+  justify-content: space-between;
   margin-top: auto;
+}
+.container .form-display .buttons .previous-button {
+  color: hsl(231deg, 11%, 63%);
+  font-weight: bolder;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+.container .form-display .buttons .next-button {
+  padding: 15px 25px;
   color: white;
   background-color: hsl(213deg, 94%, 13%);
   outline: none;
@@ -101,6 +220,21 @@ body {
   border: none;
   border-radius: 8px;
 }
-.container .form-display button:hover {
+.container .form-display .buttons .next-button:hover {
   background-color: hsl(213deg, 96%, 18%);
+}
+.container .thankyou-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 70px;
+  gap: 1rem;
+}
+.container .thankyou-display h2 {
+  color: hsl(213deg, 96%, 18%);
+}
+.container .thankyou-display p {
+  color: hsl(231deg, 11%, 63%);
 }/*# sourceMappingURL=style.css.map */
