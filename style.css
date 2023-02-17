@@ -148,6 +148,38 @@ body {
   border-radius: 16px;
   background-color: hsl(229deg, 24%, 87%);
 }
+.container .form-display .switcher .center input[type=checkbox] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  /*transition: .5s;*/
+}
+.container .form-display .switcher .center input[type=checkbox]:checked {
+  background: hsl(213deg, 96%, 18%);
+}
+.container .form-display .switcher .center input[type=checkbox]:checked::before {
+  left: 20px;
+}
+.container .form-display .switcher .center input[type=checkbox]::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
 .container .form-display .add-on-control {
   display: flex;
   flex-direction: column;
@@ -237,4 +269,7 @@ body {
 }
 .container .thankyou-display p {
   color: hsl(231deg, 11%, 63%);
+}
+.container .thankyou-display.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

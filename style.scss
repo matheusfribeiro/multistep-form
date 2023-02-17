@@ -177,6 +177,44 @@ body {
       margin-top: 15px;
       border-radius: 16px;
       background-color: hsl(229, 24%, 87%);
+
+      .center {
+        input[type="checkbox"] {
+          position: relative;
+          width: 40px;
+          height: 20px;
+          appearance: none;
+          background: #c6c6c6;
+          outline: none;
+          border-radius: 20px;
+          box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+          /*transition: .5s;*/
+
+          &:checked {
+            background: hsl(213, 96%, 18%);
+
+            &::before {
+              left: 20px;
+            }
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            top: 0;
+            left: 0;
+            background: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,.2);
+            transition: .5s;
+          }
+
+        }
+      }
+
     }
 
     // ADD-ONS - STEP 3
@@ -294,8 +332,12 @@ body {
       color: hsl(231, 11%, 63%);
     }
 
-
+    &.hidden {
+      display: none;
+    }
+    
   }
+
 
 }
 
