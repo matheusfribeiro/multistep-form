@@ -38,6 +38,10 @@ body {
   justify-content: space-between;
   padding: 15px 30px;
 }
+.container .steps-display .steps.active > span {
+  color: hsl(213deg, 96%, 18%);
+  background-color: hsl(206deg, 94%, 87%);
+}
 .container .steps-display .steps > span {
   border-radius: 50%;
   color: white;
@@ -58,7 +62,7 @@ body {
   font-size: 14px;
 }
 .container .form-display {
-  display: flex;
+  display: none;
   flex-direction: column;
   border-radius: 22px;
   padding: 20px 40px;
@@ -66,6 +70,9 @@ body {
 }
 .container .form-display.hidden {
   display: none;
+}
+.container .form-display.form-active {
+  display: flex;
 }
 .container .form-display .form-header {
   margin-bottom: 30px;
@@ -104,11 +111,14 @@ body {
   font-size: 16px;
   font-family: inherit;
 }
-.container .form-display .input-control .error {
-  color: red;
+.container .form-display .input-control span {
   display: none;
 }
-.container .form-display .input-control .input-error {
+.container .form-display .input-control.input-error div span {
+  display: flex;
+  color: red;
+}
+.container .form-display .input-control.input-error input {
   border: solid red 1px;
 }
 .container .form-display .box-control {
@@ -128,6 +138,10 @@ body {
   border: 2px solid hsl(229deg, 24%, 87%);
   border-radius: 16px;
   cursor: pointer;
+}
+.container .form-display .box-control .box.box-active {
+  border: solid 2px hsl(243deg, 100%, 62%);
+  background-color: hsl(231deg, 100%, 99%);
 }
 .container .form-display .box-control .box div {
   display: flex;
@@ -165,16 +179,16 @@ body {
   background: hsl(213deg, 96%, 18%);
 }
 .container .form-display .switcher .center input[type=checkbox]:checked::before {
-  left: 20px;
+  left: 22px;
 }
 .container .form-display .switcher .center input[type=checkbox]::before {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   border-radius: 20px;
-  top: 0;
-  left: 0;
+  top: 3px;
+  left: 2px;
   background: #fff;
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -244,13 +258,14 @@ body {
   cursor: pointer;
 }
 .container .form-display .buttons .next-button {
-  padding: 15px 25px;
-  color: white;
   background-color: hsl(213deg, 94%, 13%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-left: auto;
+  color: white;
   outline: none;
   cursor: pointer;
   border: none;
-  border-radius: 8px;
 }
 .container .form-display .buttons .next-button:hover {
   background-color: hsl(213deg, 96%, 18%);

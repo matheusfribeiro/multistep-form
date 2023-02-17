@@ -40,6 +40,13 @@ body {
       align-items: center;
       justify-content: space-between;
       padding: 15px 30px;
+
+      &.active {
+        > span {
+          color: hsl(213, 96%, 18%);
+          background-color: hsl(206, 94%, 87%);
+        }
+      }
       
       
       > span {
@@ -73,7 +80,7 @@ body {
   
 
   .form-display {
-    display: flex;
+    display: none;
     flex-direction: column;
     border-radius: 22px;
     padding: 20px 40px;
@@ -81,6 +88,10 @@ body {
 
     &.hidden {
       display: none;
+    }
+
+    &.form-active {
+      display: flex;
     }
 
     
@@ -124,15 +135,24 @@ body {
         }
         
       }
-
-      .error {
-        color: red;
+      span {
         display: none;
       }
 
-      .input-error {
-        border: solid red 1px;
+      &.input-error {
+        div {
+          span {
+            display: flex;
+            color: red;
+          }
+        }
+
+        input {
+          border: solid red 1px;
+        }
       }
+
+      
     }
 
     // SELECT PLAN - STEP 2
@@ -153,6 +173,11 @@ body {
         border: 2px solid hsl(229, 24%, 87%);
         border-radius: 16px;
         cursor: pointer;
+
+        &.box-active {
+          border: solid 2px hsl(243, 100%, 62%);
+          background-color: hsl(231, 100%, 99%);
+        }
 
         div {
           display: flex;
@@ -194,18 +219,18 @@ body {
             background: hsl(213, 96%, 18%);
 
             &::before {
-              left: 20px;
+              left: 22px;
             }
           }
 
           &::before {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 13px;
+            height: 13px;
             border-radius: 20px;
-            top: 0;
-            left: 0;
+            top: 3px;
+            left: 2px;
             background: #fff;
             transform: scale(1.1);
             box-shadow: 0 2px 5px rgba(0,0,0,.2);
@@ -297,13 +322,14 @@ body {
       
 
       .next-button {
-        padding: 15px 25px;
-        color: white;
         background-color:  hsl(213, 94%, 13%);
+        padding: 15px 25px;
+        border-radius: 8px;
+        margin-left: auto;
+        color: white;
         outline: none;
         cursor: pointer;
         border: none;
-        border-radius: 8px;
   
         &:hover {
           background-color: hsl(213, 96%, 18%);
