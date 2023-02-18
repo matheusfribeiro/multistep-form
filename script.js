@@ -2,7 +2,7 @@ let display1 = document.querySelector('#form-display1')
 let display2 = document.querySelector('#form-display2')
 let display3 = document.querySelector('#form-display3')
 let display4 = document.querySelector('#form-display4')
-let tyDisplay = document.querySelector('#thankyoudisplpay')
+let tyDisplay = document.querySelector('#thankyoudisplay')
 
 let stepDisplay1 = document.querySelector('#step1')
 let stepDisplay2 = document.querySelector('#step2')
@@ -17,6 +17,9 @@ let confirmBtn = document.querySelector('#confirmbutton')
 let backBtn1 = document.querySelector('#backbutton1')
 let backBtn2 = document.querySelector('#backbutton2')
 let backBtn3 = document.querySelector('#backbutton3')
+
+let outputSummary = document.querySelector('#outputsummary')
+
 
 
 
@@ -112,6 +115,28 @@ backBtn2.addEventListener('click', (e) => {
 nxtBtn3.addEventListener('click', (e) => {
   e.preventDefault()
 
+  //get checkbox value
+  outputSummary.innerHTML = ''
+
+  let markedCheckbox = document.getElementsByName('cb');  
+  for (let checkbox of markedCheckbox) {
+    if (checkbox.checked) {
+      let textOutput = checkbox.nextSibling.nextSibling.children[0].innerHTML
+      let valueOutput = checkbox.value
+      console.log(textOutput, valueOutput)
+      outputSummary.innerHTML += `
+        <div>
+          <p>${textOutput}</p>
+          <span>+$${valueOutput}/mo</span>
+        </div>
+      `
+    }
+  }
+      
+        
+
+
+
 
 
   display3.classList.remove('form-active')
@@ -125,6 +150,7 @@ nxtBtn3.addEventListener('click', (e) => {
 
 backBtn3.addEventListener('click', (e) => {
   e.preventDefault()
+  outputSummary. innerHTML = ''
   display4.classList.remove('form-active')
   stepDisplay4.classList.remove('active')
   display3.classList.add('form-active')
@@ -137,9 +163,9 @@ confirmBtn.addEventListener('click', (e) => {
 
 
   display4.classList.remove('form-active')
-  stepDisplay4.classList.remove('active')
+  
 
-  //FIX
+  
   tyDisplay.classList.remove('hidden')
 
   

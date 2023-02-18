@@ -173,7 +173,7 @@ body {
   outline: none;
   border-radius: 20px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  /*transition: .5s;*/
+  transition: 0.5s;
 }
 .container .form-display .switcher .center input[type=checkbox]:checked {
   background: hsl(213deg, 96%, 18%);
@@ -237,7 +237,13 @@ body {
 .container .form-display .review-box .services {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding: 15px;
+}
+.container .form-display .review-box .services div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
 }
 .container .form-display .total {
   display: flex;
