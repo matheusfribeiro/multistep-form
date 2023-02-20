@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Multi-step form</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/style/style.css">
 </head>
 <body>
 
@@ -71,7 +71,7 @@
         </div>
     
         <div class="box-control">
-          <div data-plan="Arcade" data-value="9" class="box box-active">
+          <div data-plan="Arcade" data-value="9" class="box">
             <img src="assets/images/icon-arcade.svg" alt="">
             <div>
               <b>Arcade</b>
@@ -100,6 +100,8 @@
           </div class="center">
           <p>Yearly</p>
         </div>
+
+        <span class="span-error">You must select a plan!</span>
     
         <div class="buttons">
           <button id="backbutton1"  class="previous-button">Go Back</button>
@@ -191,6 +193,6 @@
 
 
 
-  <script src="script.js"></script>
+  <script src="/assets/script/script.js"></script>
 </body>
 </html>

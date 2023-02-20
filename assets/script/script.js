@@ -119,15 +119,22 @@ planBoxes.forEach(function (box) {
 
 
 
+
 nxtBtn2.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log(parseInt(planPrice), typeof(planName))
+  console.log(parseInt(planPrice), planName)
 
+  if (planName === '') {
+    let span = document.querySelector('.span-error')
+    span.style.opacity = '100'
+  } else {
+    display2.classList.remove('form-active')
+    stepDisplay2.classList.remove('active')
+    display3.classList.add('form-active')
+    stepDisplay3.classList.add('active')
+  }
 
-  display2.classList.remove('form-active')
-  stepDisplay2.classList.remove('active')
-  display3.classList.add('form-active')
-  stepDisplay3.classList.add('active')
+  
 
 })
 
@@ -136,6 +143,8 @@ nxtBtn2.addEventListener('click', (e) => {
 
 backBtn2.addEventListener('click', (e) => {
   e.preventDefault()
+  let span = document.querySelector('.span-error')
+  span.style.opacity = '0'
   display3.classList.remove('form-active')
   stepDisplay3.classList.remove('active')
   display2.classList.add('form-active')
@@ -148,12 +157,12 @@ nxtBtn3.addEventListener('click', (e) => {
   //get checkbox value
   outputSummary.innerHTML = ''
   outputTotal = 0
-
+  let valueOutput = ''
   let markedCheckbox = document.getElementsByName('cb');  
   for (let checkbox of markedCheckbox) {
     if (checkbox.checked) {
       let textOutput = checkbox.nextSibling.nextSibling.children[0].innerHTML
-      let valueOutput = parseInt(checkbox.value)
+      valueOutput = parseInt(checkbox.value)
       outputTotal += valueOutput
 
       
@@ -164,12 +173,12 @@ nxtBtn3.addEventListener('click', (e) => {
         </div>
       `
 
-      // FIX 
-      let totalAmount = Number(planPrice) + valueOutput
-      console.log(planPrice)
-
-      totaldisplay.innerHTML = `+${Number(planPrice)}/mon`
+      
+      
     }
+
+    let totalAmount = Number(planPrice) + outputTotal
+    totaldisplay.innerHTML = `+${totalAmount}/mon`
   }
       
         

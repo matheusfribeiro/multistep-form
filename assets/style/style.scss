@@ -29,7 +29,7 @@ body {
   
 
   .steps-display {
-    background-image: url('assets/images/bg-sidebar-desktop.svg');
+    background-image: url('../images/bg-sidebar-desktop.svg');
     border-radius: 10px;
     width: 250px;
     padding: 40px 40px 40px 10px;
@@ -240,6 +240,12 @@ body {
         }
       }
 
+    }
+
+    .span-error {
+      margin: 15px 0 0 0;
+      color: red;
+      opacity: 0;
     }
 
     // ADD-ONS - STEP 3
