@@ -19,6 +19,10 @@ let backBtn2 = document.querySelector('#backbutton2')
 let backBtn3 = document.querySelector('#backbutton3')
 
 let outputSummary = document.querySelector('#outputsummary')
+let totaldisplay = document.querySelector('#totaldisplay')
+let planDisplay = document.querySelector('.plan')
+
+let planBoxes = document.querySelectorAll('.box')
 
 
 
@@ -89,9 +93,35 @@ backBtn1.addEventListener('click', (e) => {
   stepDisplay1.classList.add('active')
 })
 
+
+let planPrice = ''
+let planName = ''
+let plandisplayText = planDisplay.lastElementChild
+let plandisplayName = planDisplay.firstElementChild.firstElementChild
+planBoxes.forEach(function (box) {
+  box.addEventListener('click', (e) => {
+    planBoxes.forEach(function(item) {
+      item.classList.remove('box-active')
+  
+      if(e.target.innerHTML == item.innerHTML) {
+        item.classList.add('box-active') 
+        planPrice = item.getAttribute("data-value")
+        plandisplayText.innerHTML = `+$${planPrice}/mo`
+        planName = item.getAttribute("data-plan")
+        plandisplayName.innerHTML = planName
+        
+      }  
+    })
+  })
+})
+
+
+
+
+
 nxtBtn2.addEventListener('click', (e) => {
   e.preventDefault()
-
+  console.log(parseInt(planPrice), typeof(planName))
 
 
   display2.classList.remove('form-active')
@@ -117,19 +147,28 @@ nxtBtn3.addEventListener('click', (e) => {
 
   //get checkbox value
   outputSummary.innerHTML = ''
+  outputTotal = 0
 
   let markedCheckbox = document.getElementsByName('cb');  
   for (let checkbox of markedCheckbox) {
     if (checkbox.checked) {
       let textOutput = checkbox.nextSibling.nextSibling.children[0].innerHTML
-      let valueOutput = checkbox.value
-      console.log(textOutput, valueOutput)
+      let valueOutput = parseInt(checkbox.value)
+      outputTotal += valueOutput
+
+      
       outputSummary.innerHTML += `
         <div>
           <p>${textOutput}</p>
           <span>+$${valueOutput}/mo</span>
         </div>
       `
+
+      // FIX 
+      let totalAmount = Number(planPrice) + valueOutput
+      console.log(planPrice)
+
+      totaldisplay.innerHTML = `+${Number(planPrice)}/mon`
     }
   }
       
@@ -148,9 +187,14 @@ nxtBtn3.addEventListener('click', (e) => {
 
 // STEP 4 - SUMMARY
 
+
+
+
 backBtn3.addEventListener('click', (e) => {
   e.preventDefault()
   outputSummary. innerHTML = ''
+  totaldisplay.innerHTML = ''
+
   display4.classList.remove('form-active')
   stepDisplay4.classList.remove('active')
   display3.classList.add('form-active')

@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div id="form-display1" class="form-display form-active">
+      <div id="form-display1" class="form-display">
         <div class="form-header">
           <h1>Personal info</h1>
           <span>Please provide your name, email address and phone number</span>
@@ -64,28 +64,28 @@
           <button id="nxtbutton1" class="next-button">Next Step</button>
         </div>
       </div>
-      <div id="form-display2" class="form-display">
+      <div id="form-display2" class="form-display form-active">
         <div class="form-header">
           <h1>Select your plan</h1>
           <span>You have the option of monthly or yealy billing</span>
         </div>
     
         <div class="box-control">
-          <div class="box box-active">
+          <div data-plan="Arcade" data-value="9" class="box box-active">
             <img src="assets/images/icon-arcade.svg" alt="">
             <div>
               <b>Arcade</b>
               <span>$9/mon</span>
             </div>
           </div>
-          <div class="box">
+          <div data-plan="Advanced" data-value="12" class="box">
             <img src="assets/images/icon-advanced.svg" alt="">
             <div>
               <b>Advanced</b>
               <span>$12/mon</span>
             </div>
           </div>
-          <div class="box">
+          <div data-plan="Pro" data-value="15" class="box">
             <img src="assets/images/icon-pro.svg" alt="">
             <div>
               <b>Pro</b>
@@ -169,7 +169,7 @@
           
         </div>
         <div class="total">
-          <p>Total (per month)</p> <span>+$12/mon</span>
+          <p>Total (per month)</p> <span id="totaldisplay"></span>
         </div>
     
         <div class="buttons">
