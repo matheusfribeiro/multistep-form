@@ -239,6 +239,11 @@ body {
   align-items: center;
   padding: 15px;
 }
+.container .form-display .review-box .plan .change {
+  font-size: smaller;
+  text-decoration: underline;
+  cursor: pointer;
+}
 .container .form-display .review-box .services {
   display: flex;
   justify-content: space-between;
@@ -287,8 +292,8 @@ body {
   justify-content: center;
   text-align: center;
   flex-wrap: wrap;
-  padding: 70px;
   gap: 1rem;
+  width: 550px;
 }
 .container .thankyou-display h2 {
   color: hsl(213deg, 96%, 18%);

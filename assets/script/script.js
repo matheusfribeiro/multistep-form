@@ -12,6 +12,7 @@ let stepDisplay4 = document.querySelector('#step4')
 let nxtBtn1 = document.querySelector('#nxtbutton1')
 let nxtBtn2 = document.querySelector('#nxtbutton2')
 let nxtBtn3 = document.querySelector('#nxtbutton3')
+let changeBtn = document.querySelector('.change')
 let confirmBtn = document.querySelector('#confirmbutton')
 
 let backBtn1 = document.querySelector('#backbutton1')
@@ -196,7 +197,18 @@ nxtBtn3.addEventListener('click', (e) => {
 
 // STEP 4 - SUMMARY
 
+changeBtn.addEventListener('click', ()=> {
 
+  display4.classList.remove('form-active')
+  stepDisplay4.classList.remove('active')
+  display2.classList.add('form-active')
+  stepDisplay2.classList.add('active')
+
+  outputSummary. innerHTML = ''
+  totaldisplay.innerHTML = ''
+
+
+})
 
 
 backBtn3.addEventListener('click', (e) => {

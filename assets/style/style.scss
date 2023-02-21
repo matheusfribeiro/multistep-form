@@ -294,6 +294,13 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: 15px;
+
+        .change {
+          font-size: smaller;
+          text-decoration: underline;
+          cursor: pointer;
+          
+        }
       }
 
       .services {
@@ -360,8 +367,9 @@ body {
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
-    padding: 70px;
     gap: 1rem;
+    width: 550px;
+    
 
     h2 {
       color: hsl(213, 96%, 18%);
