@@ -25,14 +25,6 @@ let planDisplay = document.querySelector('.plan')
 
 let planBoxes = document.querySelectorAll('.box')
 
-
-
-
-
-
-
-
-
 // STEP 1 - PERSONAL INFO - FIELD VALIDATION
 nxtBtn1.addEventListener('click', (e) => {
   e.preventDefault()
@@ -82,8 +74,6 @@ nxtBtn1.addEventListener('click', (e) => {
 
 })
 
-
-
 // STEP 2 - SELECT YOUR PLAN
 
 backBtn1.addEventListener('click', (e) => {
@@ -93,7 +83,6 @@ backBtn1.addEventListener('click', (e) => {
   display1.classList.add('form-active')
   stepDisplay1.classList.add('active')
 })
-
 
 let planPrice = ''
 let planName = ''
@@ -116,11 +105,6 @@ planBoxes.forEach(function (box) {
   })
 })
 
-
-
-
-
-
 nxtBtn2.addEventListener('click', (e) => {
   e.preventDefault()
   console.log(parseInt(planPrice), planName)
@@ -134,11 +118,7 @@ nxtBtn2.addEventListener('click', (e) => {
     display3.classList.add('form-active')
     stepDisplay3.classList.add('active')
   }
-
-  
-
 })
-
 
 // STEP 3 - ADD-ONS
 
@@ -166,27 +146,17 @@ nxtBtn3.addEventListener('click', (e) => {
       valueOutput = parseInt(checkbox.value)
       outputTotal += valueOutput
 
-      
       outputSummary.innerHTML += `
         <div>
           <p>${textOutput}</p>
           <span>+$${valueOutput}/mo</span>
         </div>
-      `
-
-      
-      
+      `  
     }
 
     let totalAmount = Number(planPrice) + outputTotal
     totaldisplay.innerHTML = `+${totalAmount}/mon`
   }
-      
-        
-
-
-
-
 
   display3.classList.remove('form-active')
   stepDisplay3.classList.remove('active')
@@ -206,10 +176,7 @@ changeBtn.addEventListener('click', ()=> {
 
   outputSummary. innerHTML = ''
   totaldisplay.innerHTML = ''
-
-
 })
-
 
 backBtn3.addEventListener('click', (e) => {
   e.preventDefault()
@@ -224,16 +191,6 @@ backBtn3.addEventListener('click', (e) => {
 
 confirmBtn.addEventListener('click', (e) => {
   e.preventDefault()
-
-
-
   display4.classList.remove('form-active')
-  
-
-  
   tyDisplay.classList.remove('hidden')
-
-  
-
 })
-
